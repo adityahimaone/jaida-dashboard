@@ -31,7 +31,7 @@ type TBadge = {
 
 const ActiveIndicator = () => {
   return (
-    <span className="absolute left-0 top-1/2 transform -translate-y-1/2">
+    <span className="absolute left-0 transform -translate-y-1/2 top-1/2">
       <svg
         width="15"
         height="70"
@@ -115,10 +115,10 @@ export default function VerticalMenu({ lists, className }: Props) {
               {isActive && <ActiveIndicator />}
               <span className="flex">
                 {list.icon && (
-                  <span className="mr-4 relative">
+                  <span className="relative mr-4">
                     {list.icon}
                     {!!list.hasNotification && (
-                      <span className="w-[6px] h-[6px] bg-[#46D39A] rounded-full absolute bottom-0 right-0"></span>
+                      <span className="w-[6px] h-[6px] bg-[#46D39A] rounded-full absolute bottom-[4px] right-0"></span>
                     )}
                   </span>
                 )}

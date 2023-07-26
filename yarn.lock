@@ -2884,8 +2884,8 @@ isexe@^2.0.0:
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
 "jaida-ds@github:adityahimaone/jaida-ds":
-  version "0.0.4"
-  resolved "https://codeload.github.com/adityahimaone/jaida-ds/tar.gz/1919eb6b05022bc6355895ad9b7723135aea04b5"
+  version "0.1.0"
+  resolved "https://codeload.github.com/adityahimaone/jaida-ds/tar.gz/8b88d464cf749e3439664425ecef634e806c8fa2"
   dependencies:
     react "^18.2.0"
     react-dom "^18.2.0"

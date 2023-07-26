@@ -1,8 +1,8 @@
 "use client";
 
-import Logo from "@/components/Logo";
+// import Logo from "@/components/Logo";
 import VerticalMenu from "@/components/VerticalMenu";
-import { Button } from "jaida-ds/dist/components/Button";
+import Logo from "@ds-components/logo";
 import { House, Compass, Cloud, ChatCircle } from "@phosphor-icons/react";
 
 type TBadgeState = "success" | "warning" | "danger" | "info";
@@ -57,7 +57,7 @@ export default function Home() {
     <main className="">
       <div className="flex">
         <aside className="w-[240px] h-full flex-none">
-          <div className="ml-6 mt-10">
+          <div className="mt-10 ml-6">
             <Logo />
           </div>
           <VerticalMenu className="mt-16 gap-y-9" lists={ListMenu} />
