@@ -1,28 +1,14 @@
 "use client";
-
 import Logo from "@/components/Logo";
 import VerticalMenu from "@/components/VerticalMenu";
-import { Button } from "jaida-ds/dist/components/Button";
+import React from "react";
 import { House, Compass, Cloud, ChatCircle } from "@phosphor-icons/react";
 
-type TBadgeState = "success" | "warning" | "danger" | "info";
+type Props = {};
 
-type TList = {
-  id: string;
-  label: string;
-  slug: string;
-  icon: JSX.Element;
-  hasNotification?: boolean;
-  badge?: {
-    label: string;
-    state: TBadgeState;
-    overrideClassName?: string;
-  };
-};
-
-const ListMenu: TList[] = [
+const ListMenu = [
   {
-    id: "home",
+    id: "",
     label: "Home",
     slug: "/",
     icon: <House size={22} weight="duotone" />,
@@ -43,16 +29,11 @@ const ListMenu: TList[] = [
     id: "messages",
     label: "Messages",
     slug: "/cloud-storage",
-    hasNotification: true,
-    badge: {
-      label: "10",
-      state: "success",
-    },
     icon: <ChatCircle size={22} weight="duotone" />,
   },
 ];
 
-export default function Home() {
+function Page({}: Props) {
   return (
     <main className="">
       <div className="flex">
@@ -69,3 +50,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Page;
