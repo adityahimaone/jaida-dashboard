@@ -1,15 +1,16 @@
 "use client";
 
-// import Logo from "@/components/Logo";
-import VerticalMenu from "@/components/VerticalMenu";
 import Logo from "@ds-components/logo";
+import VerticalMenu from "@ds-components/VerticalMenu";
 import { House, Compass, Cloud, ChatCircle } from "@phosphor-icons/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type TBadgeState = "success" | "warning" | "danger" | "info";
 
 type TList = {
   id: string;
-  label: string;
+  link: JSX.Element;
   slug: string;
   icon: JSX.Element;
   hasNotification?: boolean;
@@ -23,26 +24,26 @@ type TList = {
 const ListMenu: TList[] = [
   {
     id: "home",
-    label: "Home",
+    link: <Link href={"/"}>Home</Link>,
     slug: "/",
     icon: <House size={22} weight="duotone" />,
   },
   {
     id: "locations",
-    label: "Locations",
+    link: <Link href={"/locations"}>Locations</Link>,
     slug: "/locations",
     icon: <Compass size={22} weight="duotone" />,
   },
   {
     id: "cloud-storage",
-    label: "Cloud Storage",
+    link: <Link href={"/cloud"}>Cloud Storage</Link>,
     slug: "/cloud",
     icon: <Cloud size={22} weight="duotone" />,
   },
   {
     id: "messages",
-    label: "Messages",
-    slug: "/cloud-storage",
+    link: <Link href={"/messages"}>Messages</Link>,
+    slug: "/messages",
     hasNotification: true,
     badge: {
       label: "10",
@@ -53,6 +54,7 @@ const ListMenu: TList[] = [
 ];
 
 export default function Home() {
+  const pathname = usePathname();
   return (
     <main className="">
       <div className="flex">
@@ -60,7 +62,11 @@ export default function Home() {
           <div className="mt-10 ml-6">
             <Logo />
           </div>
-          <VerticalMenu className="mt-16 gap-y-9" lists={ListMenu} />
+          <VerticalMenu
+            pathname={pathname}
+            className="mt-16 gap-y-9"
+            lists={ListMenu}
+          />
         </aside>
         <span className="h-full border border-gray-100 w-[1px]"></span>
         <div className="w-full h-full"></div>
